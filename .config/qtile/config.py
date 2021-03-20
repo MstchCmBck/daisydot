@@ -65,6 +65,10 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(),
         desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
+
+    Key([mod], 'm', lazy.layout.maximize()),
+    Key([mod], 'n', lazy.layout.normalize()),
+
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
     # Toggle between split and unsplit sides of stack.
@@ -122,12 +126,12 @@ colors = [
 ]  # window name#
 
 group_names = [
-    ("I", {"layout": "monadtall"}),
-    ("II", {"layout": "mamonadtallx"}),
-    ("III", {"layout": "monadtall"}),
-    ("IV", {"layout": "monadtall"}),
-    ("V", {"layout": "monadtall"}),
-    ("VI", {"layout": "monadtall"}),
+    ("I", {"layout": "Columns"}),
+    ("II", {"layout": "Columns"}),
+    ("III", {"layout": "Columns"}),
+    ("IV", {"layout": "Columns"}),
+    ("V", {"layout": "Columns"}),
+    ("VI", {"layout": "Columns"}),
 ]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
@@ -149,27 +153,33 @@ layout_theme = {
 }
 
 layouts = [
-    # layout.Columns(
-    #     border_focus_stack='#d75f5f',
-    #     **layout_theme
-    # ),
+    layout.Columns(
+        # border_focus_stack='#d75f5f',
+        **layout_theme
+    ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    layout.MonadTall(**layout_theme),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
+    # layout.Stack(
+        # **layout_theme,
+        # num_stacks=2),
+    # layout.Bsp(**layout_theme),
+    # layout.Matrix(**layout_theme),
+    # layout.MonadTall(
+    #     change_size=20,
+    #     change_ratio=0.05,
+    #     **layout_theme,
+    # ),
+    # layout.MonadWide(**layout_theme),
+    # layout.RatioTile(**layout_theme),
+    # layout.Tile(**layout_theme),
+    # layout.TreeTab(**layout_theme),
     layout.VerticalTile(**layout_theme),
-    # layout.Zoomy(),
-    layout.Floating(**layout_theme),
+    # layout.Zoomy(**layout_theme),
+    # layout.Floating(**layout_theme),
 ]
 
 widget_defaults = dict(
-    font='Meslo',
+    font='Meslo bold',
     fontsize=12,
     padding=10,
     foreground=colors[8],
@@ -183,7 +193,7 @@ screens = [
             [
                 widget.TextBox(
                     text='',
-                    fontsize=24,
+                    fontsize=28,
                     padding=4,
                     background=colors[19],
                 ),
@@ -197,11 +207,12 @@ screens = [
                     background=colors[6],
                 ),
                 widget.Spacer(
+                    background=colors[0],
                     opacity=0.1
                 ),
                 widget.TextBox(
                     text='',
-                    fontsize=24,
+                    fontsize=28,
                     padding=4,
                     background=colors[23],
                 ),
@@ -216,7 +227,7 @@ screens = [
                 ),
                 widget.TextBox(
                     text='',
-                    fontsize=24,
+                    fontsize=28,
                     padding=4,
                     background=colors[25],
                 ),
@@ -226,7 +237,7 @@ screens = [
                 ),
                 widget.TextBox(
                     text='',
-                    fontsize=24,
+                    fontsize=25,
                     padding=4,
                     background=colors[19],
                 ),
@@ -236,7 +247,7 @@ screens = [
                 ),
                 widget.TextBox(
                     text='',
-                    fontsize=24,
+                    fontsize=25,
                     padding=4,
                     background=colors[19],
                 ),
@@ -246,7 +257,7 @@ screens = [
                 ),
                 widget.TextBox(
                     text='直',
-                    fontsize=24,
+                    fontsize=28,
                     background=colors[28],
                 ),
                 widget.Wlan(
@@ -257,7 +268,7 @@ screens = [
                 ),
             ],
             24,
-            opacity=0.7
+            opacity=0.9
         ),
     ),
 ]
