@@ -1,0 +1,4 @@
+# Command executed before launch of the window manager
+# 
+
+xbindkeys
