@@ -181,12 +181,24 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
+                widget.TextBox(
+                    text='',
+                    fontsize=24,
+                    padding=4,
+                    background=colors[19],
+                ),
+                widget.CurrentLayout(
+                    background=colors[19],
+                ),
                 widget.GroupBox(
                     highlight_method = "line",
                     disable_drag='True',
+                    padding=15,
+                    background=colors[6],
                 ),
-                widget.WindowName(),
+                widget.Spacer(
+                    opacity=0.1
+                ),
                 widget.TextBox(
                     text='',
                     fontsize=24,
@@ -212,18 +224,29 @@ screens = [
                     channel='Master',
                     background=colors[25],
                 ),
-                widget.Systray(
-                    background=21
-                ),
-                # widget.Wallpaper(),
-                widget.Clock(
-                    format=' %Y-%m-%d %a  %H:%M',
-                    background=colors[19],
-                ),
                 widget.TextBox(
                     text='',
                     fontsize=24,
                     padding=4,
+                    background=colors[19],
+                ),
+                widget.Clock(
+                    format='%Y-%m-%d %a',
+                    background=colors[19],
+                ),
+                widget.TextBox(
+                    text='',
+                    fontsize=24,
+                    padding=4,
+                    background=colors[19],
+                ),
+                widget.Clock(
+                    format='%H:%M',
+                    background=colors[19],
+                ),
+                widget.TextBox(
+                    text='直',
+                    fontsize=24,
                     background=colors[28],
                 ),
                 widget.Wlan(
@@ -234,6 +257,7 @@ screens = [
                 ),
             ],
             24,
+            opacity=0.7
         ),
     ),
 ]
