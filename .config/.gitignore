@@ -1,0 +1,8 @@
+# Don't track enters from Chromium or VsCode
+chromium/**
+Code/**
+vlc/**
+sinew.in/**
+
+autostart/**
+**/__pycache__/**
