@@ -1,5 +1,5 @@
 #! /bin/bash 
 
+light-locker&
 redshift&
 picom -b
-nitrogen --set-zoom-fill Pictures/Wallpapers/wallpaper_1.jpg
