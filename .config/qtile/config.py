@@ -190,6 +190,9 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
+        wallpaper='~/Pictures/Wallpapers/wallpaper.jpeg',
+        wallpaper_mode='fill',
+
         top=bar.Bar(
             [
                 widget.TextBox(
