@@ -89,6 +89,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+    Key([mod], "b", lazy.spawn("light-locker-command -l"), desc="Lock the session")
 ]
 
 
