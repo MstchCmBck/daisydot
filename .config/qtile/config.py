@@ -35,7 +35,7 @@ import os
 import subprocess
 
 mod = "mod4"
-terminal = "kitty"
+terminal = "termite"
 
 keys = [
     # Switch between windows
@@ -179,11 +179,12 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Meslo bold',
+    # font='Meslo bold',
+    font='Ubuntu Mono',
     fontsize=12,
     padding=10,
     foreground=colors[8],
-    # background=colors[2],
+    background=colors[2],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -200,30 +201,67 @@ screens = [
                 widget.CurrentLayout(
                     background=colors[19],
                 ),
+                widget.TextBox(
+                    text = '',
+                    background = colors[6],
+                    foreground = colors[19],
+                    padding = 0,
+                    fontsize = 24
+                ),
                 widget.GroupBox(
                     highlight_method = "line",
                     disable_drag='True',
                     padding=15,
                     background=colors[6],
                 ),
+                widget.TextBox(
+                    text = '',
+                    background = colors[0],
+                    foreground = colors[6],
+                    padding = 0,
+                    fontsize = 24
+                ),
                 widget.Spacer(
                     background=colors[0],
                     opacity=0.1
                 ),
                 widget.TextBox(
+                    text = '',
+                    background = colors[0],
+                    foreground = colors[23],
+                    padding = 0,
+                    fontsize = 24
+                ),
+                widget.TextBox(
                     text='',
                     fontsize=28,
-                    padding=4,
                     background=colors[23],
                 ),
                 widget.CheckUpdates(
+                    # distro = "Arch_checkupdates",
+                    update_interval = 1800,
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                     background=colors[23],
+                ),
+                widget.TextBox(
+                    text = '',
+                    background = colors[23],
+                    foreground = colors[15],
+                    padding = 0,
+                    fontsize = 24
                 ),
                 widget.Battery(
                     format='{char} {percent:2.0%}',
                     charge_char='',
                     discharge_char='',
                     background=colors[15],
+                ),
+                widget.TextBox(
+                    text = '',
+                    background = colors[15],
+                    foreground = colors[25],
+                    padding = 0,
+                    fontsize = 24
                 ),
                 widget.TextBox(
                     text='',
@@ -234,6 +272,13 @@ screens = [
                 widget.Volume(
                     channel='Master',
                     background=colors[25],
+                ),
+                widget.TextBox(
+                    text = '',
+                    background = colors[25],
+                    foreground = colors[19],
+                    padding = 0,
+                    fontsize = 24
                 ),
                 widget.TextBox(
                     text='',
@@ -254,6 +299,13 @@ screens = [
                 widget.Clock(
                     format='%H:%M',
                     background=colors[19],
+                ),
+                widget.TextBox(
+                    text = '',
+                    background = colors[19],
+                    foreground = colors[28],
+                    padding = 0,
+                    fontsize = 24
                 ),
                 widget.TextBox(
                     text='直',
