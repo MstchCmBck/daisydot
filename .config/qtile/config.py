@@ -184,8 +184,8 @@ widget_defaults = dict(
     font='Ubuntu Mono',
     fontsize=12,
     padding=10,
-    foreground=colors[8],
-    background=colors[2],
+    foreground=colors[7],
+    background=colors[3],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -200,127 +200,113 @@ screens = [
                     text='',
                     fontsize=28,
                     padding=4,
-                    background=colors[19],
+                    foreground=colors[19],
                 ),
                 widget.CurrentLayout(
-                    background=colors[19],
+                    foreground=colors[19],
                 ),
                 widget.TextBox(
-                    text = '',
-                    background = colors[6],
-                    foreground = colors[19],
+                    text = '|',
                     padding = 0,
-                    fontsize = 24
+                    fontsize = 18,
                 ),
                 widget.GroupBox(
                     highlight_method = "line",
                     disable_drag='True',
                     padding=15,
-                    background=colors[6],
+                    foreground=colors[6],
                 ),
                 widget.TextBox(
-                    text = '',
-                    background = colors[0],
-                    foreground = colors[6],
+                    text = '|',
                     padding = 0,
-                    fontsize = 24
+                    fontsize = 18,
                 ),
                 widget.Spacer(
-                    background=colors[0],
-                    opacity=0.1
+                    foreground=colors[0],
+                    opacity=0.1,
                 ),
                 widget.TextBox(
-                    text = '',
-                    background = colors[0],
-                    foreground = colors[23],
+                    text = '|',
                     padding = 0,
-                    fontsize = 24
+                    fontsize = 18,
                 ),
                 widget.TextBox(
                     text='',
                     fontsize=28,
-                    background=colors[23],
+                    foreground=colors[23],
                 ),
                 widget.CheckUpdates(
                     # distro = "Arch_checkupdates",
                     update_interval = 1800,
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
-                    background=colors[23],
+                    foreground=colors[23],
                 ),
                 widget.TextBox(
-                    text = '',
-                    background = colors[23],
-                    foreground = colors[15],
+                    text = '|',
                     padding = 0,
-                    fontsize = 24
+                    fontsize = 18,
                 ),
                 widget.Battery(
                     format='{char} {percent:2.0%}',
                     charge_char='',
                     discharge_char='',
-                    background=colors[15],
+                    foreground=colors[15],
                 ),
                 widget.TextBox(
-                    text = '',
-                    background = colors[15],
-                    foreground = colors[25],
+                    text = '|',
                     padding = 0,
-                    fontsize = 24
+                    fontsize = 18,
                 ),
                 widget.TextBox(
                     text='',
                     fontsize=28,
                     padding=4,
-                    background=colors[25],
+                    foreground=colors[25],
                 ),
                 widget.Volume(
                     channel='Master',
-                    background=colors[25],
+                    foreground=colors[25],
                 ),
                 widget.TextBox(
-                    text = '',
-                    background = colors[25],
-                    foreground = colors[19],
+                    text = '|',
                     padding = 0,
-                    fontsize = 24
+                    fontsize = 18,
                 ),
                 widget.TextBox(
                     text='',
                     fontsize=25,
                     padding=4,
-                    background=colors[19],
+                    foreground=colors[19],
                 ),
                 widget.Clock(
                     format='%Y-%m-%d %a',
-                    background=colors[19],
+                    foreground=colors[19],
                 ),
                 widget.TextBox(
                     text='',
                     fontsize=25,
                     padding=4,
-                    background=colors[19],
+                    foreground=colors[19],
                 ),
                 widget.Clock(
                     format='%H:%M',
-                    background=colors[19],
+                    foreground=colors[19],
                 ),
                 widget.TextBox(
-                    text = '',
-                    background = colors[19],
-                    foreground = colors[28],
+                    text = '|',
                     padding = 0,
-                    fontsize = 24
+                    fontsize = 18,
                 ),
                 widget.TextBox(
                     text='直',
                     fontsize=28,
-                    background=colors[28],
+                    foreground=colors[28],
                 ),
                 widget.Wlan(
                     interface='wlp3s0',
                     format='{quality}%',
                     disconnected_message='',
-                    background=colors[28],
+                    foreground=colors[28],
                 ),
             ],
             24,
