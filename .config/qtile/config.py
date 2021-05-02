@@ -94,37 +94,60 @@ keys = [
 
 
 # Gruvbox color scheme.      # list number (color[#])
+# colors = [
+#     ["#282828", "#282828"],  # 0  # bg
+#     ["#282828", "#282828"],  # 1  # bg0
+#     ["#1d2021", "#1d2021"],  # 2  # bg0_h
+#     ["#32302f", "#32302f"],  # 3  # bg0_s
+#     ["#3c3836", "#3c3836"],  # 4  # bg1
+#     ["#504945", "#504945"],  # 5  # bg2
+#     ["#665c54", "#665c54"],  # 6  # bg3
+#     ["#7c6f64", "#7c6f64"],  # 7  # bg4
+#     ["#ebdbb2", "#ebdbb2"],  # 8  # fg
+#     ["#fbf1c7", "#fbf1c7"],  # 9  # fg0
+#     ["#ebdbb2", "#ebdbb2"],  # 10 # fg1é
+#     ["#bdae93", "#bdae93"],  # 12 # fg3
+#     ["#a89984", "#a89984"],  # 13 # fg4
+#     ["#cc241d", "#cc241d"],  # 14 # red hard
+#     ["#fb4934", "#fb4934"],  # 15 # red soft
+#     ["#98971a", "#98971a"],  # 16 # green hard
+#     ["#b8bb26", "#b8bb26"],  # 17 # green soft
+#     ["#d79921", "#d79921"],  # 18 # yellow hard
+#     ["#fabd2f", "#fabd2f"],  # 19 # yellow soft
+#     ["#458588", "#458588"],  # 20 # blue hard
+#     ["#83a598", "#83a598"],  # 21 # blue soft
+#     ["#b16286", "#b16286"],  # 22 # purple hard
+#     ["#d3869b", "#d3869b"],  # 23 # purple soft
+#     ["#689d6a", "#689d6a"],  # 24 # aqua hard
+#     ["#8ec07c", "#8ec07c"],  # 25 # aqua soft
+#     ["#d65d0e", "#d65d0e"],  # 26 # orange hard
+#     ["#FE8019", "#FE8019"],  # 27 # orange soft
+#     ["#a89984", "#a89984"],  # 28 # gray
+#     ["#928374", "#928374"],  # 29 # gray bg
+# ]  # window name#
+
+# Nord color scheme
 colors = [
-    ["#282828", "#282828"],  # 0  # bg
-    ["#282828", "#282828"],  # 1  # bg0
-    ["#1d2021", "#1d2021"],  # 2  # bg0_h
-    ["#32302f", "#32302f"],  # 3  # bg0_s
-    ["#3c3836", "#3c3836"],  # 4  # bg1
-    ["#504945", "#504945"],  # 5  # bg2
-    ["#665c54", "#665c54"],  # 6  # bg3
-    ["#7c6f64", "#7c6f64"],  # 7  # bg4
-    ["#ebdbb2", "#ebdbb2"],  # 8  # fg
-    ["#fbf1c7", "#fbf1c7"],  # 9  # fg0
-    ["#ebdbb2", "#ebdbb2"],  # 10 # fg1é
-    ["#bdae93", "#bdae93"],  # 12 # fg3
-    ["#a89984", "#a89984"],  # 13 # fg4
-    ["#cc241d", "#cc241d"],  # 14 # red hard
-    ["#fb4934", "#fb4934"],  # 15 # red soft
-    ["#98971a", "#98971a"],  # 16 # green hard
-    ["#b8bb26", "#b8bb26"],  # 17 # green soft
-    ["#d79921", "#d79921"],  # 18 # yellow hard
-    ["#fabd2f", "#fabd2f"],  # 19 # yellow soft
-    ["#458588", "#458588"],  # 20 # blue hard
-    ["#83a598", "#83a598"],  # 21 # blue soft
-    ["#b16286", "#b16286"],  # 22 # purple hard
-    ["#d3869b", "#d3869b"],  # 23 # purple soft
-    ["#689d6a", "#689d6a"],  # 24 # aqua hard
-    ["#8ec07c", "#8ec07c"],  # 25 # aqua soft
-    ["#d65d0e", "#d65d0e"],  # 26 # orange hard
-    ["#FE8019", "#FE8019"],  # 27 # orange soft
-    ["#a89984", "#a89984"],  # 28 # gray
-    ["#928374", "#928374"],  # 29 # gray bg
-]  # window name#
+    ["#d8dee9", "#d8dee9"], # 0 # default light
+    ["#2e3440", "#2e3440"], # 1 # default bolt
+    ["#3b4252", "#3b4252"], # 2 # dark grey
+    ["#bf616a", "#bf616a"], # 3 # light pink
+    ["#a3be8c", "#a3be8c"], # 4 # light green
+    ["#ebcb8b", "#ebcb8b"], # 5 # yellow
+    ["#81a1c1", "#81a1c1"], # 6
+    ["#b48ead", "#b48ead"], # 7 # purple
+    ["#88c0d0", "#88c0d0"], # 8 # light blue
+    ["#e5e9f0", "#e5e9f0"], # 9
+    ["#4c566a", "#4c566a"], # 10
+    ["#bf616a", "#bf616a"], # 11
+    ["#a3be8c", "#a3be8c"], # 12
+    ["#ebcb8b", "#ebcb8b"], # 13
+    ["#81a1c1", "#81a1c1"], # 14
+    ["#b48ead", "#b48ead"], # 15
+    ["#8fbcbb", "#8fbcbb"], # 16
+    ["#eceff4", "#eceff4"], # 17
+]
+
 
 group_names = [
     ("I", {"layout": "Columns"}),
@@ -149,8 +172,8 @@ for i, (name, kwargs) in enumerate(group_names, 0):
 layout_theme = {
     "border_width": 2,
     "margin": 10,
-    "border_focus": "#83a598",  # colors list cannot come before this. layouts break.
-    "border_normal": "#32302f",
+    "border_focus": "#bf616a",  # colors list cannot come before this. layouts break.
+    "border_normal": "#2e3440",
 }
 
 layouts = [
@@ -161,7 +184,7 @@ layouts = [
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(
-        # **layout_theme,
+        # **layou t_theme,
         # num_stacks=2),
     # layout.Bsp(**layout_theme),
     # layout.Matrix(**layout_theme),
@@ -184,8 +207,8 @@ widget_defaults = dict(
     font='Ubuntu Mono',
     fontsize=12,
     padding=10,
-    foreground=colors[7],
-    background=colors[3],
+    foreground=colors[0],
+    background=colors[1],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -200,10 +223,9 @@ screens = [
                     text='',
                     fontsize=28,
                     padding=4,
-                    foreground=colors[19],
+                    foreground=colors[8],
                 ),
                 widget.CurrentLayout(
-                    foreground=colors[19],
                 ),
                 widget.TextBox(
                     text = '|',
@@ -233,13 +255,13 @@ screens = [
                 widget.TextBox(
                     text='',
                     fontsize=28,
-                    foreground=colors[23],
+                    foreground=colors[8],
                 ),
                 widget.CheckUpdates(
                     # distro = "Arch_checkupdates",
                     update_interval = 1800,
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
-                    foreground=colors[23],
+                    foreground=colors[8],
                 ),
                 widget.TextBox(
                     text = '|',
@@ -250,7 +272,7 @@ screens = [
                     format='{char} {percent:2.0%}',
                     charge_char='',
                     discharge_char='',
-                    foreground=colors[15],
+                    foreground=colors[4],
                 ),
                 widget.TextBox(
                     text = '|',
@@ -261,11 +283,11 @@ screens = [
                     text='',
                     fontsize=28,
                     padding=4,
-                    foreground=colors[25],
+                    foreground=colors[5],
                 ),
                 widget.Volume(
                     channel='Master',
-                    foreground=colors[25],
+                    foreground=colors[5],
                 ),
                 widget.TextBox(
                     text = '|',
@@ -276,21 +298,21 @@ screens = [
                     text='',
                     fontsize=25,
                     padding=4,
-                    foreground=colors[19],
+                    foreground=colors[7],
                 ),
                 widget.Clock(
                     format='%Y-%m-%d %a',
-                    foreground=colors[19],
+                    foreground=colors[7],
                 ),
                 widget.TextBox(
                     text='',
                     fontsize=25,
                     padding=4,
-                    foreground=colors[19],
+                    foreground=colors[8],
                 ),
                 widget.Clock(
                     format='%H:%M',
-                    foreground=colors[19],
+                    foreground=colors[8],
                 ),
                 widget.TextBox(
                     text = '|',
@@ -299,14 +321,14 @@ screens = [
                 ),
                 widget.TextBox(
                     text='直',
-                    fontsize=28,
-                    foreground=colors[28],
+                    fontsize=24,
+                    foreground=colors[11],
                 ),
                 widget.Wlan(
                     interface='wlp3s0',
                     format='{quality}%',
                     disconnected_message='',
-                    foreground=colors[28],
+                    foreground=colors[11],
                 ),
             ],
             24,
